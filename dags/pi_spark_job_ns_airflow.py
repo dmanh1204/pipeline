@@ -28,7 +28,7 @@ dag = DAG('PI_Spark_job_ns_airflow',
 # configmaps = [k8s.V1EnvFromSource(config_map_ref=k8s.V1ConfigMapEnvSource(name='my-configs'))]
 
 spark_pi = KubernetesPodOperator(
-            image="noobmdev/sparkonk8s:0.0.1",
+            image="noobmdev/sparkonk8s:0.0.2",
             cmds=[
               "/usr/bin/tini",
               "-s",
@@ -43,7 +43,7 @@ spark_pi = KubernetesPodOperator(
               "--conf",
               "spark.history.fs.update.interval=5s",
               "--conf",
-              "noobmdev/sparkonk8s:0.0.1",
+              "noobmdev/sparkonk8s:0.0.2",
               "--conf",
               "spark.kubernetes.container.image.pullPolicy=IfNotPresent",
               "--conf",
