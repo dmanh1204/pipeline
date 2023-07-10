@@ -79,21 +79,20 @@ spark_pi = KubernetesPodOperator(
               "--conf",
               "spark.hadoop.fs.s3a.fast.upload=true",
               "--conf",
-              "spark.hadoop.fs.s3a.access.key='Q3AM3UQ867SPQQA43P2F'",
+              "spark.hadoop.fs.s3a.access.key=Q3AM3UQ867SPQQA43P2F",
               "--conf",
-              "spark.hadoop.fs.s3a.secret.key='zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG'",
+              "spark.hadoop.fs.s3a.secret.key=zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG",
               "--conf",
               "spark.hadoop.fs.s3a.endpoint='play.min.io:9000'",
-
               "--conf",
               "spark.serializer=org.apache.spark.serializer.KryoSerializer",
               "--conf",
               "spark.sql.sources.ignoreDataLocality.enabled=true",
               "--conf",
               "spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version=2",
-              "s3a://datateam-spark/jobs/pi.py 100"
+              "s3a://datateam-spark/jobs/pi.py"
               # "/opt/spark/examples/src/main/python/pi.py",
-              # "100"
+              "100"
             ],
             # env_vars=env_var,
             # env_from=configmaps,
