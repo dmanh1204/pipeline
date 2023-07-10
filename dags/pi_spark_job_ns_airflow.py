@@ -17,7 +17,7 @@ default_args = {
     'is_delete_operator_pod': True
 }
 
-dag = DAG('PI_Spark_job',
+dag = DAG('PI_Spark_job_ns_airflow',
           default_args=default_args,
           description='Kubernetes Pod Operator - Demonstration Dag',
           schedule_interval=None,
