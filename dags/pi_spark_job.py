@@ -18,7 +18,6 @@ default_args = {
 }
 
 dag = DAG('PI_Spark_job',
-          namespace='spark',
           default_args=default_args,
           description='Kubernetes Pod Operator - Demonstration Dag',
           schedule_interval=None,
@@ -29,6 +28,7 @@ dag = DAG('PI_Spark_job',
 # configmaps = [k8s.V1EnvFromSource(config_map_ref=k8s.V1ConfigMapEnvSource(name='my-configs'))]
 
 spark_pi = KubernetesPodOperator(
+            namespace='spark',
             image="noobmdev/sparkonk8s:0.0.2",
             cmds=[
               "/usr/bin/tini",
