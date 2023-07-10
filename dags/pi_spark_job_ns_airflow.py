@@ -84,6 +84,7 @@ spark_pi = KubernetesPodOperator(
               "spark.hadoop.fs.s3a.secret.key='zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG'",
               "--conf",
               "spark.hadoop.fs.s3a.endpoint='play.min.io:9000'",
+
               "--conf",
               "spark.serializer=org.apache.spark.serializer.KryoSerializer",
               "--conf",
