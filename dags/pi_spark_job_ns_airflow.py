@@ -97,8 +97,8 @@ spark_pi = KubernetesPodOperator(
             # env_vars=env_var,
             # env_from=configmaps,
             is_delete_operator_pod=False,  # to debug pod
-            name=f"pre-txns",
-            task_id=f"pre-txns",
+            name=f"pi-spark-job-airflow",
+            task_id=f"pi-spark-job-airflow",
             retries=5,
             retry_delay=timedelta(minutes=5),
             dag=dag,
