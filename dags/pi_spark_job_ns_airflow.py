@@ -43,7 +43,7 @@ spark_pi = KubernetesPodOperator(
               "--conf",
               "spark.history.fs.update.interval=5s",
               "--conf",
-              "noobmdev/sparkonk8s:0.0.2",
+              "spark.kubernetes.container.image=noobmdev/sparkonk8s:0.0.2",
               "--conf",
               "spark.kubernetes.container.image.pullPolicy=IfNotPresent",
               "--conf",
@@ -84,8 +84,8 @@ spark_pi = KubernetesPodOperator(
               "spark.sql.sources.ignoreDataLocality.enabled=true",
               "--conf",
               "spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version=2",
-              # "s3a://datateam-spark/jobs/pi.py 100"
-              "/opt/spark/examples/src/main/python/pi.py",
+              "s3a://datateam-spark/jobs/pi.py"
+              # "/opt/spark/examples/src/main/python/pi.py",
               "100"
             ],
             # env_vars=env_var,
