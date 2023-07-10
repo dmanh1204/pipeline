@@ -84,7 +84,7 @@ spark_pi = KubernetesPodOperator(
               "spark.sql.sources.ignoreDataLocality.enabled=true",
               "--conf",
               "spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version=2",
-              "s3a://datateam-spark/jobs/pre-tx.py"
+              "s3a://datateam-spark/jobs/pi.py 100"
             ],
             # env_vars=env_var,
             # env_from=configmaps,
