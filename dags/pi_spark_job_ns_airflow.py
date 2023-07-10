@@ -75,25 +75,28 @@ spark_pi = KubernetesPodOperator(
               "--conf",
               "spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem",
               "--conf",
-              "spark.hadoop.fs.s3a.connection.ssl.enabled=false",
+              "spark.hadoop.fs.s3a.connection.ssl.enabled=true",
               "--conf",
               "spark.hadoop.fs.s3a.fast.upload=true",
               "--conf",
-              "spark.hadoop.fs.s3a.access.key='AKIASPVPI24RDI7QZUPB'",
+              "spark.hadoop.fs.s3a.access.key='Q3AM3UQ867SPQQA43P2F'",
               "--conf",
-              "spark.hadoop.fs.s3a.secret.key='6bE/c91ZGG3p913SC18//XJImcw5eDRwAGXDXqMm'",
+              "spark.hadoop.fs.s3a.secret.key='zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG'",
+              "--conf",
+              "spark.hadoop.fs.s3a.endpoint='play.min.io:9000'",
               "--conf",
               "spark.serializer=org.apache.spark.serializer.KryoSerializer",
               "--conf",
               "spark.sql.sources.ignoreDataLocality.enabled=true",
               "--conf",
               "spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version=2",
-              "s3a://datateam-spark/jobs/pi.py"
+              "s3a://datateam-spark/jobs/pi.py 100"
               # "/opt/spark/examples/src/main/python/pi.py",
-              "100"
+              # "100"
             ],
             # env_vars=env_var,
             # env_from=configmaps,
+            is_delete_operator_pod=False,  # to debug pod
             name=f"pre-txns",
             task_id=f"pre-txns",
             retries=5,
